@@ -3,7 +3,7 @@ const { PaystackDepositsRiders } = require('../models/paystack_deposit_riders');
 const MYSQLCONNECTION = require('../databases/mysql_config');
 const { info, errormessage } = require('../ansi-colors-config');
 
-const MySQLConnection = new MYSQLCONNECTION().MySQLConnection();
+const MySQLConnection = new MYSQLCONNECTION().MySQLConnection;
 
 exports.depositPaystack = async (req, res) => {
   const { userID, phone, email, amount, reference } = req.body;

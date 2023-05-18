@@ -1,9 +1,9 @@
 const paystack = require('paystack')(process.env.PAYSTACK_SECRET_KEY);
-const { PaystackDepositsRiders } = require('../models/paystack_deposit_riders');
+const { PaystackDepositsDrivers } = require('../models/paystack_deposit_drivers');
 const MYSQLCONNECTION = require('../databases/mysql_config');
 const { info, errormessage } = require('../ansi-colors-config');
 
-const MySQLConnection = new MYSQLCONNECTION().MySQLConnection();
+const MySQLConnection = new MYSQLCONNECTION().MySQLConnection;
 
 exports.depositPaystack = async (req, res) => {
   const { driverID, phone, email, amount, reference } = req.body;

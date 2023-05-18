@@ -5,10 +5,6 @@ const {errormessage} = require('../ansi-colors-config');
 
 class ServiceConfig {
     constructor(app) {
-        process.on('unhandledRejection', (reason, p) => {
-            console.log(errormessage('Unhandled Rejection at: Promise', p, 'reason:', reason));
-            // application specific logging, throwing an error, or other logic here
-        });
         this.app = app;
     }
 
